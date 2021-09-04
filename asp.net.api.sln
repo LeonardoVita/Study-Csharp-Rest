@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.6.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "api", "api\api.csproj", "{6EDDDB31-A89D-4483-8E47-601FADB6508F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "api", "api\api.csproj", "{6EDDDB31-A89D-4483-8E47-601FADB6508F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{1F40589A-BF5F-4645-97EC-FE9B7E31A634}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,9 +15,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{6EDDDB31-A89D-4483-8E47-601FADB6508F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -30,5 +29,23 @@ Global
 		{6EDDDB31-A89D-4483-8E47-601FADB6508F}.Release|x64.Build.0 = Release|Any CPU
 		{6EDDDB31-A89D-4483-8E47-601FADB6508F}.Release|x86.ActiveCfg = Release|Any CPU
 		{6EDDDB31-A89D-4483-8E47-601FADB6508F}.Release|x86.Build.0 = Release|Any CPU
+		{1F40589A-BF5F-4645-97EC-FE9B7E31A634}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F40589A-BF5F-4645-97EC-FE9B7E31A634}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F40589A-BF5F-4645-97EC-FE9B7E31A634}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{1F40589A-BF5F-4645-97EC-FE9B7E31A634}.Debug|x64.Build.0 = Debug|Any CPU
+		{1F40589A-BF5F-4645-97EC-FE9B7E31A634}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1F40589A-BF5F-4645-97EC-FE9B7E31A634}.Debug|x86.Build.0 = Debug|Any CPU
+		{1F40589A-BF5F-4645-97EC-FE9B7E31A634}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F40589A-BF5F-4645-97EC-FE9B7E31A634}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F40589A-BF5F-4645-97EC-FE9B7E31A634}.Release|x64.ActiveCfg = Release|Any CPU
+		{1F40589A-BF5F-4645-97EC-FE9B7E31A634}.Release|x64.Build.0 = Release|Any CPU
+		{1F40589A-BF5F-4645-97EC-FE9B7E31A634}.Release|x86.ActiveCfg = Release|Any CPU
+		{1F40589A-BF5F-4645-97EC-FE9B7E31A634}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6F28D237-1527-4271-BA8E-C4DD57F5D32F}
 	EndGlobalSection
 EndGlobal
