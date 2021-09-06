@@ -27,6 +27,7 @@ namespace WebApplication1.Controllers
         }
 
         [HttpGet()]
+        [HttpHead]
         public ActionResult<IEnumerable<AuthorModel>> GetAuthors()
         {
             var authorsFromRepo = _courseLibraryRepository.GetAuthors();
@@ -34,7 +35,7 @@ namespace WebApplication1.Controllers
         }
 
         [HttpGet("{authorId:guid}")]
-        public IActionResult GetAuthor(Guid authorId)
+        public ActionResult<AuthorModel> GetAuthor(Guid authorId)
         {
             var authorsFromRepo = _courseLibraryRepository.GetAuthor(authorId);
 
@@ -43,7 +44,7 @@ namespace WebApplication1.Controllers
                 return NotFound();
             }
 
-            return Ok(authorsFromRepo);
+            return Ok(_mapper.Map<AuthorModel>(authorsFromRepo));
         }
 
     }
