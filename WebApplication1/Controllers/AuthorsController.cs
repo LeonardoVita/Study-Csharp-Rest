@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 namespace WebApplication1.Controllers
 {
     [ApiController]
+    [Route("api/authors")]
     public class AuthorsController : ControllerBase
     {
         private readonly ICourseLibraryRepository _courseLibraryRepository;
@@ -18,11 +19,25 @@ namespace WebApplication1.Controllers
                 throw new ArgumentException(nameof(courseLibraryRepository));
         }
 
-        [HttpGet("api/authors")]
+        [HttpGet()]
         public IActionResult GetAuthors()
         {
             var authorsFromRepo = _courseLibraryRepository.GetAuthors();
-            return new JsonResult(authorsFromRepo);
+            return Ok(authorsFromRepo);
         }
+
+        [HttpGet("{authorId:guid}")]
+        public IActionResult GetAuthor(Guid authorId)
+        {
+            var authorsFromRepo = _courseLibraryRepository.GetAuthor(authorId);
+
+            if (authorsFromRepo == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(authorsFromRepo);
+        }
+
     }
 }
