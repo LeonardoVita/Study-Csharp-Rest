@@ -7,6 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using WebApplication1.Helpers;
 using WebApplication1.Models;
+using WebApplication1.ResourceParameters;
 
 namespace WebApplication1.Controllers
 {
@@ -28,9 +29,9 @@ namespace WebApplication1.Controllers
 
         [HttpGet()]
         [HttpHead]
-        public ActionResult<IEnumerable<AuthorModel>> GetAuthors()
+        public ActionResult<IEnumerable<AuthorModel>> GetAuthors([FromQuery] AuthorsResourceParameters authorsResourceParameters)
         {
-            var authorsFromRepo = _courseLibraryRepository.GetAuthors();
+            var authorsFromRepo = _courseLibraryRepository.GetAuthors(authorsResourceParameters);
             return Ok(_mapper.Map<IEnumerable<AuthorModel>>(authorsFromRepo));
         }
 
