@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using CourseLibrary.API.Entities;
 using CourseLibrary.API.Services;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -8,6 +9,7 @@ using System.Threading.Tasks;
 using WebApplication1.Helpers;
 using WebApplication1.Models;
 using WebApplication1.ResourceParameters;
+using WebApplication1.ViewModels;
 
 namespace WebApplication1.Controllers
 {
@@ -35,7 +37,7 @@ namespace WebApplication1.Controllers
             return Ok(_mapper.Map<IEnumerable<AuthorModel>>(authorsFromRepo));
         }
 
-        [HttpGet("{authorId:guid}")]
+        [HttpGet("{authorId:guid}", Name = "GetAuthor")]
         public ActionResult<AuthorModel> GetAuthor(Guid authorId)
         {
             var authorsFromRepo = _courseLibraryRepository.GetAuthor(authorId);
@@ -46,6 +48,17 @@ namespace WebApplication1.Controllers
             }
 
             return Ok(_mapper.Map<AuthorModel>(authorsFromRepo));
+        }
+
+        [HttpPost]
+        public ActionResult<AuthorModel> CreateAuthor(AuthorViewModel author)
+        {
+            var authorEntity = _mapper.Map<Author>(author);
+            _courseLibraryRepository.AddAuthor(authorEntity);
+            _courseLibraryRepository.Save();
+
+            var authorToReturn = _mapper.Map<AuthorModel>(authorEntity);
+            return CreatedAtRoute("GetAuthor", new { authorId = authorToReturn.Id }, authorToReturn);
         }
 
     }

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using WebApplication1.Helpers;
 using WebApplication1.Models;
+using WebApplication1.ViewModels;
 
 namespace WebApplication1.Profiles
 {
@@ -22,6 +23,9 @@ namespace WebApplication1.Profiles
                     dest => dest.Age,
                     opt => opt.MapFrom(src => src.DateOfBirth.GetCurrentAge())
                 );
+
+            CreateMap<AuthorViewModel, Author>();
+                
         }
     }
 }
