@@ -24,7 +24,7 @@ namespace WebApplication1.Profiles
                     opt => opt.MapFrom(src => src.DateOfBirth.GetCurrentAge())
                 );
 
-            CreateMap<AuthorViewModel, Author>();
+            CreateMap<AuthorForCreationVM, Author>();
                 
         }
     }

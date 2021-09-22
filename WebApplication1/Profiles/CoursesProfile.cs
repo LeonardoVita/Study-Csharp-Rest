@@ -14,7 +14,7 @@ namespace WebApplication1.Profiles
         public CoursesProfile()
         {
             CreateMap<Course,CourseModel>();
-            CreateMap<CourseViewModel,Course>();
+            CreateMap<CourseForCreationVM, Course>();
         }
     }
 }

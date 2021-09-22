@@ -57,7 +57,7 @@ namespace WebApplication1.Controllers
         }
 
         [HttpPost]
-        public ActionResult<CourseModel> CreateCourse(Guid authorId, CourseViewModel course)
+        public ActionResult<CourseModel> CreateCourse(Guid authorId, CourseForCreationVM course)
         {
             if (!_courseLibraryRepository.AuthorExists(authorId))
             {

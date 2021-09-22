@@ -29,7 +29,7 @@ namespace WebApplication1.Controllers
 
         }
 
-        [HttpGet()]
+        [HttpGet]
         [HttpHead]
         public ActionResult<IEnumerable<AuthorModel>> GetAuthors([FromQuery] AuthorsResourceParameters authorsResourceParameters)
         {
@@ -51,7 +51,7 @@ namespace WebApplication1.Controllers
         }
 
         [HttpPost]
-        public ActionResult<AuthorModel> CreateAuthor(AuthorViewModel author)
+        public ActionResult<AuthorModel> CreateAuthor(AuthorForCreationVM author)
         {
             var authorEntity = _mapper.Map<Author>(author);
             _courseLibraryRepository.AddAuthor(authorEntity);

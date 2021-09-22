@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace WebApplication1.ViewModels
 {
-    public class AuthorViewModel
+    public class AuthorForCreationVM
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
