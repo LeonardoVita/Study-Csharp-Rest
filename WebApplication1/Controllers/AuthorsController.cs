@@ -37,6 +37,13 @@ namespace WebApplication1.Controllers
             return Ok(_mapper.Map<IEnumerable<AuthorModel>>(authorsFromRepo));
         }
 
+        [HttpGet("Renan")]
+        [HttpHead]
+        public ActionResult<IEnumerable<AuthorModel>> GetRenan()
+        {
+           return Ok("Cole mané");
+        }
+
         [HttpGet("{authorId:guid}", Name = "GetAuthor")]
         public ActionResult<AuthorModel> GetAuthor(Guid authorId)
         {
