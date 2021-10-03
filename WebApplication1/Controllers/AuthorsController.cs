@@ -37,18 +37,13 @@ namespace WebApplication1.Controllers
             return Ok(_mapper.Map<IEnumerable<AuthorModel>>(authorsFromRepo));
         }
 
-        [HttpGet("{authorId:guid}", Name = "GetAuthor")]
-        public ActionResult<AuthorModel> GetAuthor(Guid authorId)
+        [HttpGet("/teste")]
+        [HttpHead]
+        public ActionResult<IEnumerable<AuthorModel>> GetTeste([FromQuery] AuthorsResourceParameters authorsResourceParameters)
         {
-            var authorsFromRepo = _courseLibraryRepository.GetAuthor(authorId);
-
-            if (authorsFromRepo == null)
-            {
-                return NotFound();
-            }
-
-            return Ok(_mapper.Map<AuthorModel>(authorsFromRepo));
-        }
+            
+            return Ok("teste");
+        }        
 
         [HttpPost]
         public ActionResult<AuthorModel> CreateAuthor(AuthorForCreationVM author)
