@@ -12,7 +12,7 @@ namespace WebApplication1.ValidationAttributes
         protected override ValidationResult IsValid(object value, 
             ValidationContext validationContext)
         {
-            var course = (CourseForCreationVM)validationContext.ObjectInstance;
+            var course = (CourseForCreationVM) validationContext.ObjectInstance;
 
             if (course.Title == course.Description)
             {
